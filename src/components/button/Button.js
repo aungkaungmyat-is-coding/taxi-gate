@@ -3,12 +3,12 @@ import React from 'react';
 import {moderateScale} from 'react-native-size-matters';
 import {COLORS, FONTS} from '../../styles';
 
-export default function Button({onBtnPress, title}) {
+export default function Button({onBtnPress, title, backgroundColor}) {
   return (
     <TouchableOpacity
       activeOpacity={0.7}
       onPress={() => onBtnPress && onBtnPress()}
-      style={styles.btnMainContainer}>
+      style={{...styles.btnMainContainer, backgroundColor}}>
       <Text style={styles.title}>{title.toUpperCase()}</Text>
     </TouchableOpacity>
   );
@@ -16,7 +16,6 @@ export default function Button({onBtnPress, title}) {
 
 const styles = StyleSheet.create({
   btnMainContainer: {
-    backgroundColor: COLORS.secondaryColor,
     height: moderateScale(53, 0.3),
     alignItems: 'center',
     justifyContent: 'center',

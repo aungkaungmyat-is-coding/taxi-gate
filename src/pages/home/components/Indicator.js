@@ -39,10 +39,6 @@ export default Indicator;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    position: 'absolute',
-    bottom: 300,
-    left: 0,
-    right: 0,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
