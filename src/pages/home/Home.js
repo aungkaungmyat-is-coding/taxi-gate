@@ -5,6 +5,8 @@ import HomeCarousel from './components/HomeCarousel';
 import Indicator from './components/Indicator';
 import {tempImgData} from './data/data';
 import BackDrop from './components/BackDrop';
+import {SIGN_UP_SCREEN} from '../../constants/ScreenRoute';
+import {COLORS} from '../../styles';
 
 export default function Home({navigation}) {
   const scrollX = React.useRef(new Animated.Value(0)).current;
@@ -34,7 +36,9 @@ export default function Home({navigation}) {
           );
         }}
       />
-      <Indicator scrollX={scrollX} />
+      <View style={{marginHorizontal: 20}}>
+        <Indicator scrollX={scrollX} />
+      </View>
       <View
         style={{
           flex: 1,
@@ -42,7 +46,11 @@ export default function Home({navigation}) {
           marginBottom: 50,
           marginHorizontal: 20,
         }}>
-        <Button title={'Get Started'} />
+        <Button
+          backgroundColor={COLORS.secondaryColor}
+          title={'Get Started'}
+          onBtnPress={() => navigation.navigate(SIGN_UP_SCREEN)}
+        />
       </View>
     </View>
   );
