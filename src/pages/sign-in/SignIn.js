@@ -4,6 +4,7 @@ import {moderateScale} from 'react-native-size-matters';
 import {COLORS, FONTS} from '../../styles';
 import {AppTextInput, Button, SignInAndOutLayout} from '../../components';
 import {useForm} from 'react-hook-form';
+import {COMPLETE_STEP_SCREEN} from '../../constants/ScreenRoute';
 
 const formRules = {
   email: {
@@ -27,6 +28,7 @@ const SignIn = ({navigation}) => {
 
   const onSubmit = data => {
     console.log(data);
+    navigation.navigate(COMPLETE_STEP_SCREEN);
   };
 
   return (
