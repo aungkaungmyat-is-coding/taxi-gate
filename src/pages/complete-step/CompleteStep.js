@@ -4,6 +4,7 @@ import {AppTextInput, Button, CompleteStepLayout} from '../../components';
 import {COLORS, FONTS} from '../../styles';
 import {moderateScale} from 'react-native-size-matters';
 import {useForm} from 'react-hook-form';
+import {ENTER_CODE_SCREEN} from '../../constants/ScreenRoute';
 
 const formRules = {
   phone: {
@@ -21,7 +22,7 @@ const CompleteStep = ({navigation}) => {
 
   const onSubmit = data => {
     console.log(data);
-    navigation.navigate();
+    navigation.navigate(ENTER_CODE_SCREEN);
   };
 
   return (

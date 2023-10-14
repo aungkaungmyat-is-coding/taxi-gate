@@ -15,6 +15,8 @@
     "react": "18.2.0",
     "react-hook-form": "^7.47.0",
     "react-native": "0.72.5",
+    "react-native-background-timer": "^2.4.1",
+    "react-native-confirmation-code-field": "^7.3.2",
     "react-native-device-info": "^10.11.0",
     "react-native-gesture-handler": "^2.13.1",
     "react-native-maps": "^1.8.0",

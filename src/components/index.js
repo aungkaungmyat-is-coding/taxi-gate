@@ -3,6 +3,7 @@ export {default as Button} from './button/Button';
 //layout
 export {default as SignInAndOutLayout} from './layout/SignInAndOutLayout';
 export {default as CompleteStepLayout} from './layout/CompleteStepLayout';
+export {default as EnterCodeLayout} from './layout/EnterCodeLayout';
 
 //input
 export {default as AppTextInput} from './form-inputs/AppTextInput';
