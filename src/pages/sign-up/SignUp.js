@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import React, {useRef} from 'react';
 import {moderateScale} from 'react-native-size-matters';
 import {COLORS, FONTS} from '../../styles';
@@ -41,11 +41,7 @@ const SignUp = ({navigation}) => {
       <View style={styles.mainContainer}>
         <View style={styles.labelContainer}>
           <Text style={styles.signUp}>Sign Up</Text>
-          <Text
-            style={{
-              fontFamily: FONTS.medium,
-              fontSize: 12,
-            }}>
+          <Text style={styles.label}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
             odio officiis, suscipit neque provident velit esse, quos animi
             deleniti at fuga voluptas dolorum incidunt harum. Id iusto ut
@@ -121,6 +117,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-between',
     paddingTop: 20,
+  },
+  label: {
+    fontFamily: FONTS.medium,
+    fontSize: 12,
   },
   signUp: {
     color: COLORS.primaryColor,
