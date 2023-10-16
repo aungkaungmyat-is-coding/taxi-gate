@@ -4,6 +4,7 @@ import {
   COMPLETE_STEP_SCREEN,
   ENTER_CODE_SCREEN,
   HOME_SCREEN,
+  MAP_VIEW_SCREEN,
   SIGN_IN_SCREEN,
   SIGN_UP_SCREEN,
 } from '../../constants/ScreenRoute';
@@ -11,6 +12,7 @@ import {
   CompleteStepScreen,
   EnterCodeScreen,
   HomeScreen,
+  MapViewScreen,
   SignInScreen,
   SignUpScreen,
 } from '../../pages';
@@ -29,6 +31,9 @@ export default function RootStack() {
           component={CompleteStepScreen}
         />
         <Stack.Screen name={ENTER_CODE_SCREEN} component={EnterCodeScreen} />
+      </Stack.Group>
+      <Stack.Group>
+        <Stack.Screen name={MAP_VIEW_SCREEN} component={MapViewScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );

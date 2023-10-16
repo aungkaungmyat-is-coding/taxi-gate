@@ -10,10 +10,11 @@ import {
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
 import _BackgroundTimer from 'react-native-background-timer';
+import {MAP_VIEW_SCREEN} from '../../constants/ScreenRoute';
 
 const CELL_COUNT = 4;
 
-const EnterCode = () => {
+const EnterCode = ({navigation}) => {
   const [value, setValue] = useState('');
   const [isAllFocused, setIsAllFocused] = useState(false);
   const [seconds, setSeconds] = useState(180);
@@ -37,13 +38,6 @@ const EnterCode = () => {
 
   const formattedSeconds = (seconds % 60).toString().padStart(2, '0');
   const formattedMinutes = Math.floor(seconds / 60);
-
-  const onRequestOTP = () => {
-    if (seconds > 0) {
-      return;
-    }
-    console.log('You just click');
-  };
 
   return (
     <EnterCodeLayout>
@@ -99,7 +93,11 @@ const EnterCode = () => {
           </Text>
         </View>
         <View style={styles.btnContainer}>
-          <Button title={'continue'} backgroundColor={COLORS.primaryColor} />
+          <Button
+            title={'continue'}
+            backgroundColor={COLORS.primaryColor}
+            onBtnPress={() => navigation.navigate(MAP_VIEW_SCREEN)}
+          />
         </View>
       </View>
     </EnterCodeLayout>

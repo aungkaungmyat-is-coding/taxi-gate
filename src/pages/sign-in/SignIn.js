@@ -61,7 +61,6 @@ const SignIn = ({navigation}) => {
               label={'Password'}
               placeholder={'Enter  password'}
               inpRef={inpPasswordRef}
-              onSubmitEditing={() => inpConfirmPasswordRef.current.focus()}
             />
           </View>
         </View>
