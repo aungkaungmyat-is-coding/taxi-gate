@@ -8,3 +8,10 @@ export {default as EnterCodeScreen} from './enter-code/EnterCode';
 
 //map-view
 export {default as MapViewScreen} from './map-view/MapView';
+
+//drawer
+export {default as PaymentScreen} from './payment/Payment';
+export {default as HistoryScreen} from './history/History';
+export {default as NotificationScreen} from './notification/Notification';
+export {default as InviteFriendScreen} from './invite-friend/InviteFriend';
+export {default as SettinsScreen} from './settings/Settings';

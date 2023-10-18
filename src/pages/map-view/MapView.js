@@ -9,16 +9,18 @@ import {COLORS, FONTS} from '../../styles';
 import MapView, {Marker} from 'react-native-maps';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import {moderateScale} from 'react-native-size-matters';
+import {DrawerActions} from '@react-navigation/native';
 
 let latitudeDelta = 0.09;
 let longitudeDelta = 0.09;
 
-const MapViewScreen = () => {
+const MapViewScreen = ({navigation}) => {
   let mapRef = useRef();
   return (
     <MapLayout
       containerStyle={{overflow: 'hidden'}}
       title={'Home'}
+      onLeftIconPress={() => navigation.dispatch(DrawerActions.openDrawer())}
       leftIcon={<Entypo name={'menu'} color={COLORS.white} size={28} />}
       rightIcon={
         <Ionicons
