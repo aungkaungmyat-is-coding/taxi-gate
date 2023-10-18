@@ -1,9 +1,10 @@
+import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React, {useEffect, useState} from 'react';
 import {ROOT_STACK, SPLASH_STACK} from '../constants/ScreenRoute';
-import SplashStack from './splash-stack/SplashStack';
-import RootStack from './root-stack/RootStack';
+import SplashStack from './stacks/splash-stack/SplashStack';
+import RootStack from './stacks/root-stack/RootStack';
 
 const Stack = createStackNavigator();
 

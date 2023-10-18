@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {SPLASH_SCREEN} from '../../constants/ScreenRoute';
-import {SplashScreen} from '../../pages';
+import {HOME_SCREEN, SPLASH_SCREEN} from '../../../constants/ScreenRoute';
+import {HomeScreen, SplashScreen} from '../../../pages';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +23,7 @@ export default function SplashStack() {
         },
       }}>
       <Stack.Screen name={SPLASH_SCREEN} component={SplashScreen} />
+      <Stack.Screen name={HOME_SCREEN} component={HomeScreen} />
     </Stack.Navigator>
   );
 }
