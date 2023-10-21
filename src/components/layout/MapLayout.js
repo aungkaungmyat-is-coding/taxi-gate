@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   },
   children: {
     flex: 1,
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.backgroundColor,
     marginTop: 35 - statusBarHeight / 2,
   },
 });
