@@ -1,25 +1,18 @@
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import NotificationCard from './components/notification-card/NotificationCard';
-import {COLORS} from '../../styles';
 import {MapLayout} from '../../components';
-
-const notifications = [
-  {
-    value: 'Just invite 3 your friends, and you will get 3 free coupons code',
-    label: 'Get 3 Free Coupons Now!',
-    icon: (
-      <MaterialIcons name="discount" size={24} color={COLORS.primaryColor} />
-    ),
-    backgroundColor: COLORS.secondaryColor,
-  },
-];
+import {notifications} from './mock-data/NotificationData';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import {COLORS} from '../../styles';
 
 const Notification = ({navigation}) => {
   return (
-    <MapLayout>
-      <View style={{paddingHorizontal: 20, paddingVertical: 30, flex: 1}}>
+    <MapLayout
+      leftIcon={<Ionicons name="arrow-back" size={24} color={COLORS.white} />}
+      onLeftIconPress={() => navigation.goBack()}
+      title={'Notifications'}>
+      <View style={styles.mainContainer}>
         <FlatList
           data={notifications}
           keyExtractor={item => item?.value}
@@ -41,4 +34,6 @@ const Notification = ({navigation}) => {
 
 export default Notification;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  mainContainer: {paddingHorizontal: 20, paddingVertical: 30, flex: 1},
+});
