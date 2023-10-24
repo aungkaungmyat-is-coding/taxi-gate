@@ -16,29 +16,13 @@ const CustomDrawerContent = ({props}) => {
 
   return (
     <View {...props} style={{flex: 1}}>
-      <View
-        style={{
-          backgroundColor: COLORS.primaryColor,
-          flex: 1,
-        }}>
+      <View style={styles.mainContainer}>
         <View style={{alignItems: 'center'}}>
           <Image
-            style={{
-              width: moderateScale(50, 0.3),
-              height: moderateScale(50, 0.3),
-              marginTop: 30,
-            }}
+            style={styles.image}
             source={require('../../../assets/images/kakashi.jpg')}
           />
-          <Text
-            style={{
-              color: COLORS.white,
-              fontFamily: FONTS.medium,
-              fontSize: 16,
-              paddingTop: 10,
-            }}>
-            John Doe
-          </Text>
+          <Text style={styles.name}>John Doe</Text>
         </View>
         <FlatList
           data={DRAWER_ITEM}
@@ -48,16 +32,7 @@ const CustomDrawerContent = ({props}) => {
             return (
               <DrawerItem
                 style={{justifyContent: 'center'}}
-                label={() => (
-                  <Text
-                    style={{
-                      color: COLORS.white,
-                      fontFamily: FONTS.medium,
-                      fontSize: 14,
-                    }}>
-                    {item?.label}
-                  </Text>
-                )}
+                label={() => <Text style={styles.label}>{item?.label}</Text>}
                 onPress={() => {
                   if (item?.route == 'LOGOUT') {
                     onPressLogout();
@@ -80,4 +55,25 @@ const CustomDrawerContent = ({props}) => {
 
 export default CustomDrawerContent;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  mainContainer: {
+    backgroundColor: COLORS.primaryColor,
+    flex: 1,
+  },
+  image: {
+    width: moderateScale(50, 0.3),
+    height: moderateScale(50, 0.3),
+    marginTop: 30,
+  },
+  name: {
+    color: COLORS.white,
+    fontFamily: FONTS.medium,
+    fontSize: 16,
+    paddingTop: 10,
+  },
+  label: {
+    color: COLORS.white,
+    fontFamily: FONTS.medium,
+    fontSize: 14,
+  },
+});
